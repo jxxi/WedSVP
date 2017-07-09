@@ -25,14 +25,15 @@ var App = React.createClass({
   },
   render: function() {
     return (
-      <div>
-        <header className="Header">
-          <Logo />
-          <Navigation />
-          <UserProfile />
-        </header>
-        <Hero />
-        <TitleList title="Personalized RSVP Website" url='discover/tv?sort_by=popularity.desc&page=1' />
+      <div id="main">
+          <header className="Header">
+            <Logo />
+            <Navigation />
+            <UserProfile />
+          </header>
+          <Hero />
+          <TitleList title="Personalized RSVP Website" url='discover/tv?sort_by=popularity.desc&page=1' />
+        <Footer />
       </div>
     );
   }
@@ -214,6 +215,28 @@ var ListToggle = React.createClass({
     );
   }
 });
+
+// Footer
+var Footer = React.createClass({
+  render : function(){
+    return(
+      <footer className="footer" style={{backgroundColor: 'rgba(63, 72, 89, 0.3)'}}>
+        <div className="container" style={{paddingTop: '30px',paddingBottom: '30px'}}>
+          <div className="row text-center">
+            <div className="col-sm-6">About</div>
+            <div className="col-sm-6">Contact Us</div>
+          </div>        
+        </div>
+        <div className="container" style={{paddingTop: '30px',paddingBottom: '30px'}}>
+        <div className="row text-center">
+            <div className="col-sm-12">© 2017 WedSVP LLC. All Rights Reserved.</div>
+          </div>
+        </div>
+      </footer>
+    );
+  }
+});
+
 
 
 export default App;

@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from './Logo.js';
+import SignUp from './SignUp.js';
 import './App.css';
 
 /////////////////
@@ -140,7 +141,7 @@ var TitleList = React.createClass({
     var titles ='';
     if(this.state.data.results) {
       titles = this.state.data.results.map(function(title, i) {
-        if(i < 5) {
+        if(i < 3) {
           var name = '';
           var backDrop = 'http://image.tmdb.org/t/p/original' + title.backdrop_path;
           if(!title.name) {
@@ -153,7 +154,7 @@ var TitleList = React.createClass({
             <Item key={title.id} title={name} score={title.vote_average} overview={title.overview} backdrop={backDrop} />
           );  
 
-        }else{
+        }else if(i == 3){
           return (<div key={title.id}></div>);
         }
       }); 
@@ -177,11 +178,11 @@ var TitleList = React.createClass({
 var Item = React.createClass({
   render: function() {
     return (
-      <div className="Item" style={{backgroundImage: 'url(' + this.props.backdrop + ')'}} >
+      <div className="Item">
         <div className="overlay">
-          <div className="title">{this.props.title}</div>
-          <div className="rating">{this.props.score} / 10</div>
-          <div className="plot">{this.props.overview}</div>
+          <div className="title">title</div>
+          <div className="rating">score</div>
+          <div className="plot">overview</div>
           <ListToggle />
         </div>
       </div>

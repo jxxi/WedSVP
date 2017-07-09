@@ -98,9 +98,9 @@ p {
 }
 
 .Logo {
-  width: 151px;
-  height: 41px;
-  margin-right: 10px;
+  width: 280px;
+  height: 50px;
+  margin-right: 30px;
   -webkit-transition: margin .125s ease;
   transition: margin .125s ease;
 }
@@ -133,7 +133,7 @@ p {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 10px;
+  padding: 10px 10px;
 }
 .Navigation ul li {
   font-weight: 400;
@@ -142,6 +142,7 @@ p {
   -webkit-transition: background .125s ease;
   transition: background .125s ease;
   border-radius: 3px;
+  margin-right: 20px;
 }
 .Navigation ul li:hover {
   background: #7CD6CE;
@@ -332,6 +333,10 @@ p {
 .Hero {
   margin-bottom: -15vw;
  
+}
+
+.content {
+  
 }
 
 .TitleList {

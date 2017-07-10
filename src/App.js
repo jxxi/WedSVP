@@ -1,7 +1,9 @@
 import React from 'react';
 import Logo from './Logo.js';
 import SignUp from './SignUp.js';
+import SignIn from './SignIn.js';
 import './App.css';
+import { Switch, Route, Link } from 'react-router-dom';
 
 /////////////////
 /// COMPONENTS //
@@ -26,6 +28,10 @@ var App = React.createClass({
   render: function() {
     return (
       <div id="main">
+          <Switch>
+            <Route exact path='/signup' component={SignUp}/>
+            <Route path='/signin' component={SignIn}/>
+          </Switch>
           <header className="Header">
             <Logo />
             <Navigation />
@@ -39,7 +45,6 @@ var App = React.createClass({
   }
 });
 
-
 // Navigation
 var Navigation = React.createClass({
   render: function() {
@@ -47,7 +52,7 @@ var Navigation = React.createClass({
       <div id="navigation" className="Navigation">
         <nav>
           <ul>
-            <li>Sign Up</li>
+            <li><Link to='/signup'>Sign Up</Link></li>
             <li>WedSVP Samples</li>
           </ul>
         </nav>
@@ -82,8 +87,8 @@ var Hero = React.createClass({
           <h2>Create a Personalized RSVP for your Special Day</h2>
           <h3>Skip the headache of snail mail. Direct your guests to an online RSVP.</h3>
           <div className="button-wrapper">
-            <HeroButton primary={true} text="Sign Up - It's Free!" />
-            <HeroButton primary={false} text="How it works" />
+            <HeroButton primary={true} text="Sign Up - It's Free!" page="signup"/>
+            <HeroButton primary={false} text="How it works" page=""/>
           </div>
         </div>
         <div className="overlay"></div>
@@ -95,8 +100,15 @@ var Hero = React.createClass({
 // Hero Button
 var HeroButton = React.createClass({
   render: function() {
+    var button;
+    
+    if(this.props.page != "")
+      button = <Link to={this.props.page} className="Button" data-primary={this.props.primary}>{this.props.text}</Link>
+    else
+      button = <a href="#" className="Button" data-primary={this.props.primary}>{this.props.text}</a>
+        
     return (
-      <a href="#" className="Button" data-primary={this.props.primary}>{this.props.text}</a>
+      button
     );
   }
 })
@@ -236,7 +248,5 @@ var Footer = React.createClass({
     );
   }
 });
-
-
 
 export default App;

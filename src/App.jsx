@@ -19,22 +19,49 @@ var App = React.createClass({
   render: function() {
     return (
       <div id="main">
-          <Switch>
-            <Route exact path='/signup' component={SignUp}/>
-            <Route path='/signin' component={SignIn}/>
-          </Switch>
-          <header className="Header">
-            <Logo />
-            <Navigation />
-            <UserProfile />
-          </header>
-          <Hero />
-          <TitleList title="Personalized RSVP Website" url='discover/tv?sort_by=popularity.desc&page=1' />
-        <Footer />
+        <Main />     
       </div>
     );
   }
 });
+
+//Header
+var Header = React.createClass({
+  render: function() {
+    return (
+      <header className="Header">
+          <Logo />
+          <Navigation />
+          <UserProfile />
+      </header>
+    )
+  }
+});
+
+//Home
+var Home = React.createClass({
+  render: function() {
+    return (
+      <div>
+        <Header />
+        <Hero />
+        <TitleList title="Personalized RSVP Website" url='discover/tv?sort_by=popularity.desc&page=1' />
+        <Footer />
+      </div>
+    )
+  }
+});
+
+//Main
+const Main = () => (
+  <main>
+    <Switch>
+      <Route exact path='/' component={Home}/>
+      <Route exact path='/signup' component={SignUp}/>
+      <Route path='/signin' component={SignIn}/>
+    </Switch>
+  </main>
+)
 
 // Navigation
 var Navigation = React.createClass({
@@ -161,6 +188,7 @@ var TitleList = React.createClass({
         }else if(i === 3){
           return (<div key={title.id}></div>);
         }
+        return null
       }); 
 
     } 

@@ -267,6 +267,12 @@ th {
   display: none;
 }
 
+.Main {
+  width: 100%;
+  position: relative;
+  margin-top: 200px;
+}
+
 .Hero {
   width: 100%;
   position: relative;
@@ -358,10 +364,6 @@ th {
 .Hero {
   margin-bottom: -15vw;
  
-}
-
-.content {
-  
 }
 
 .TitleList {

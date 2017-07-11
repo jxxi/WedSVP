@@ -1,7 +1,7 @@
 # WedSVP
 Create a personalized RSVP site for weddings.
 
-![Alt text](/images/homePage.png?raw=true "Optional Title")
+![WedSVP Home page](/images/homePage.png?raw=true "Home Page")
 
 
 

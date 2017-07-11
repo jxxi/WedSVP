@@ -1,8 +1,8 @@
 import React from 'react';
-import Logo from './Logo.js';
-import SignUp from './SignUp.js';
-import SignIn from './SignIn.js';
-import './App.css';
+import Logo from './Logo';
+import SignUp from './SignUp';
+import SignIn from './SignIn';
+import '../static/css/App.css';
 import { Switch, Route, Link } from 'react-router-dom';
 
 /////////////////
@@ -15,16 +15,7 @@ var App = React.createClass({
   getInitialState: function() {
     return {searchTerm:"", searchUrl:""};
   },
-  handleKeyUp :function(e){
-    if (e.key === 'Enter' && this.state.searchTerm !== '') {
-      var searchUrl = "search/multi?query=" + this.state.searchTerm + "&api_key=" + this.apiKey;
-      this.setState({searchUrl:searchUrl});
-    }
-  },
-
-  handleChange : function(e){
-      this.setState({searchTerm : e.target.value});    
-  },
+  
   render: function() {
     return (
       <div id="main">
@@ -102,7 +93,7 @@ var HeroButton = React.createClass({
   render: function() {
     var button;
     
-    if(this.props.page != "")
+    if(this.props.page !== "")
       button = <Link to={this.props.page} className="Button" data-primary={this.props.primary}>{this.props.text}</Link>
     else
       button = <a href="#" className="Button" data-primary={this.props.primary}>{this.props.text}</a>
@@ -167,7 +158,7 @@ var TitleList = React.createClass({
             <Item key={title.id} title={name} score={title.vote_average} overview={title.overview} backdrop={backDrop} />
           );  
 
-        }else if(i == 3){
+        }else if(i === 3){
           return (<div key={title.id}></div>);
         }
       }); 

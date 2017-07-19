@@ -1,5 +1,4 @@
 import React from 'react';
-import '../static/css/SignUp.css';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 var Input = React.createClass({
@@ -29,11 +28,11 @@ var Modal = React.createClass({
 					<Input
 						id="name"
 						type="text"
-						placeholder="Jack-Edward Oliver" />
+						placeholder="Sandra Dee" />
 					<Input
 						id="username"
 						type="email"
-						placeholder="mrjackolai@gmail.com" />
+						placeholder="sandra.dee@gmail.com" />
 					<Input
 						id="password"
 						type="password"

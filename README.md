@@ -1,6 +1,8 @@
 # WedSVP
+Create a personalized RSVP site for weddings.
 
-Create a personalized RSVP site for weddings
+![WedSVP Home page](/images/homePage.png?raw=true "Home Page")
+
 
 
 ### Prerequisites

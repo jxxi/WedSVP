@@ -10,6 +10,18 @@ body {
   overflow: hidden;
 }
 
+.SignUp {
+  background-image: url('https://images2.alphacoders.com/814/thumb-1920-814527.jpg');
+  background-image: url(https://images7.alphacoders.com/685/685276.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #3E363F;
+  font-family: "Lato", sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .App {
   align-items: center;
   display: flex;

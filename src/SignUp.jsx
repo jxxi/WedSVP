@@ -1,4 +1,5 @@
 import React from 'react';
+import '../static/css/App.css';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 var Input = React.createClass({
@@ -69,7 +70,7 @@ var SignUp = React.createClass({
 		}
 		
 		return(
-			<div className="SignUp">
+			<div id="signup" className="SignUp">
 				<ReactCSSTransitionGroup 
 					transitionName="example"
 					transitionEnterTimeout={500}

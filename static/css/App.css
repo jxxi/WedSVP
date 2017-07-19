@@ -316,7 +316,6 @@ th {
 
 .Hero {
   margin-bottom: -15vw;
- 
 }
 
 .TitleList {
@@ -488,13 +487,7 @@ th {
 .Modal {
   font-size: 16px;
   font-weight: 600;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, black 0%, transparent 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, black 0%, transparent 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
-  /* IE6-9 */
+  background: #7CD6CE;
   border-radius: 2px;
   padding: 20px;
   position: absolute;
@@ -503,6 +496,9 @@ th {
   left: 50%;
   margin-left: -200px;
   margin-top: 200px;
+}
+.ModalForm {
+  padding-top: 100px;
 }
 .Input {
   display: flex;
@@ -514,7 +510,7 @@ th {
 .Input input {
   outline: none;
   border: 0;
-  color: #FFFCE8;
+  color: #3f4859;
   background: transparent;
   font-family: "Lato", sans-serif;
   flex: 1 0 auto;
@@ -541,7 +537,7 @@ th {
 }
 .Input label::before {
   align-items: center;
-  color: #FFFCE8;
+  color: #3f4859;
   display: flex;
   height: 30px;
   justify-content: center;
@@ -556,7 +552,6 @@ th {
   opacity: 1;
   transition: opacity .5s ease, margin .5s ease;
 }
-
 .example-leave {
   margin-top: 0px;
   opacity: 1;
@@ -565,4 +560,12 @@ th {
   margin-top: -30px;
   opacity: .01;
   transition: opacity .3s ease, margin .5s ease;
+}
+.SignUp {
+  width: 100%;
+  opacity: .98;
+  position: relative;
+  background-size: cover;
+  min-height: 1000px;
+  background-image: url('../images/signup.jpg');
 }

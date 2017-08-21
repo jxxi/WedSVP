@@ -124,13 +124,13 @@ th {
   -webkit-transition: margin .125s ease;
   transition: margin .125s ease;
 }
-.Logo svg {
+.Logo .FormLogo svg {
   -webkit-transform: scale(0.5);
           transform: scale(0.5);
   -webkit-transform-origin: 0 0;
           transform-origin: 0 0;
 }
-.Logo svg path {
+.Logo .FormLogo svg path {
   fill: #7CD6CE;
   -webkit-transition: fill .125s ease;
   transition: fill .125s ease;
@@ -141,6 +141,14 @@ th {
 }
 .Logo:hover svg path {
   fill: #ffffff !important;
+}
+.FormLogo {
+  width: 280px;
+  height: 50px;
+}
+.FormLogo form{
+  text-align: center;
+  justify-content: center;
 }
 
 .Navigation ul {
@@ -485,10 +493,12 @@ th {
   width: 32px;
 }
 .Modal {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
-  background: #7CD6CE;
+  background: #ffffff;
   border-radius: 2px;
+  opacity: .85;
+  overflow: hidden;
   padding: 20px;
   position: absolute;
   width: 400px;
@@ -497,13 +507,49 @@ th {
   margin-left: -200px;
   margin-top: 200px;
 }
-.ModalForm {
-  padding-top: 100px;
+.ModalButton {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 44px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 2px solid #7CD6CE;
+  border-radius: 44px;
+  font-size: 14px;
+  font-weight: 600;
+  -webkit-transition: border .125s ease, background .125s ease;
+  text-decoration: none;
+  transition: border .125s ease, background .125s ease;
+}
+.ModalButton:hover {
+  border: 2px solid #f5f5f1;
+  background: #7CD6CE;
+  text-decoration: none;
+}
+.ModalButton[data-primary='true'] {
+  color: #ffffff;
+  background: #7CD6CE;
+}
+.ModalButton[data-primary='false'] {
+  color: #337ab7;
+}
+.modalButtonContainer{
+  margin-top: 50px;
 }
 .Input {
   display: flex;
   flex-direction: row-reverse;
-  border-bottom: 1px solid rgba(255, 252, 232, 0.1);
   padding-bottom: 3px;
   margin-bottom: 5px;
 }
@@ -514,7 +560,7 @@ th {
   background: transparent;
   font-family: "Lato", sans-serif;
   flex: 1 0 auto;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 300;
 }
 .Input input:focus ~ label {
@@ -531,17 +577,16 @@ th {
 }
 .Input label {
   font-family: FontAwesome;
-  font-size: 13px;
-  opacity: .1;
+  font-size: 18px;
   transition: opacity .5s ease;
 }
 .Input label::before {
   align-items: center;
   color: #3f4859;
   display: flex;
-  height: 30px;
+  height: 40px;
   justify-content: center;
-  width: 30px;
+  width: 40px;
 }
 .example-enter {
   margin-top: 30px;
@@ -568,4 +613,7 @@ th {
   background-size: cover;
   min-height: 1000px;
   background-image: url('../images/signup.jpg');
+}
+.SocialMediaSignUp {
+  margin-bottom: 50px;
 }

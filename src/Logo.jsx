@@ -8,7 +8,7 @@ var Logo = React.createClass({
 			<div id="logo" className="Logo">
 				<div className="image">
 					<Link to='/'>
-						<img src={require('../static/images/logo.png')} alt="WedSVP" />
+						<img className="img-responsive" src={require('../static/images/logo.png')} alt="WedSVP" />
 					</Link>
 				</div>
 			</div>

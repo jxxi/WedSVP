@@ -4,22 +4,73 @@ import '../static/css/App.css';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 var Input = React.createClass({
+	    getInitialState() {
+        return {
+            valid: false,
+            value: null,
+            errorMessage: this.props.errorMessage,
+            errorVisible: false
+        }
+    },
+    handleChange(event) {
+        this.setState({
+            value: event.target.value
+        })
+
+        if (this.props.validate) {
+            this.validate(event.target.value);
+        }
+
+        if (this.props.onChange) {
+            this.props.onChange(event.target.value);
+        }
+
+    },
+    validate(value) {
+        if (this.props.validate && this.props.validate(value)) {
+            this.setState({
+                valid: true,
+                errorVisible: false
+            });
+        } else {
+            this.setState({
+                valid: false,
+                errorVisible: true
+            });
+        }
+    },
+	
 	render: function() {
 		return (
 			<div className="row">
 				<div className="Input">
 					<input 
-						id={this.props.name}
+						name={this.props.name}
+						onChange={this.handleChange}
 						autoComplete="false"
-						required
 						type={this.props.type}
 						placeholder={this.props.placeholder}
 					/>	
 					<label htmlFor={this.props.name}></label>
 				</div>
+				{!this.state.valid && <InputError errorMessage={this.state.errorMessage} visible={this.state.errorVisible} />}
 			</div>
+			
 		);
 	}
+});
+
+var InputError = React.createClass({
+    render() {
+        var divStyle = {
+            display: this.props.visible ? 'inline-block': 'none'
+        }
+        return (
+			<div className="row text-center">
+				<div className="error text-danger" style={divStyle}>{this.props.errorMessage}</div>
+			</div>
+        )
+    }
 });
 
 var SocialMediaSignUp = React.createClass({
@@ -38,13 +89,40 @@ var SocialMediaSignUp = React.createClass({
 });
 
 var Modal = React.createClass({
+	getInitialState() {
+        return {
+            password: null,
+            confirmPassword: null
+        }
+    },
+    handlePasswordInput(value) {
+		this.setState({
+			password: value
+		});
+		var self= this;
+		window.setTimeout(function(){
+			if (self.state.confirmPassword && self.state.confirmPassword.length) {
+				self.refs.confirmPassword.validate(self.state.confirmPassword);
+			}
+		});
+	},
+    handleConfirmPasswordInput(value) {
+        this.setState({
+            confirmPassword: value
+        })
+    },
+    isConfirmedPassword(value) {
+        return (value === this.state.password)
+
+    },
 	render: function() {
 		return (
-			<div className="Modal">
+			<div className="Modal">		
 				<form 
 					onSubmit={this.props.onSubmit}
 					className="ModalForm">
-					<div className="col-sm-12">	
+					<div className="col-sm-12">
+						<div className="container"><Logo /></div>
 						<SocialMediaSignUp />
 						<Input
 							id="name"
@@ -55,20 +133,25 @@ var Modal = React.createClass({
 							type="email"
 							placeholder="Email" />
 						<Input
-							id="password"
+							name="password"
 							type="password"
-							placeholder="Password" />
+							placeholder="Password"
+							errorMessage="Password is required"
+							onChange={this.handlePasswordInput} />				
 						<Input
-							id="confirm-password"
+							ref="confirmPassword"
+							name="confirmPassword"
 							type="password"
-							placeholder="Confirm Password" />
+							placeholder="Confirm Password"
+							errorMessage="Passwords do not match"
+							validate={this.isConfirmedPassword}
+							onChange={this.handleConfirmPasswordInput} />
 						<div className="modalButtonContainer">
 							<ModalButton primary={true} text="Register" page=""/>
 							<ModalButton primary={false} text="Already a member? Login" page=""/>
 						</div>
 					</div>
 				</form>
-				<Logo />
 			</div>
 		);
 	}
@@ -97,11 +180,6 @@ var SignUp = React.createClass({
 	
 	componentDidMount: function() {
 		this.setState({ mounted: true });
-	},
-	
-	handleSubmit: function(e) {
-		this.setState({ mounted: false });
-		e.preventDefault();
 	},
 
 	render: function() {

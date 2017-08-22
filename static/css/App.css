@@ -615,5 +615,6 @@ th {
   background-image: url('../images/signup.jpg');
 }
 .SocialMediaSignUp {
+  margin-top: 40px;
   margin-bottom: 50px;
 }

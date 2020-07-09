@@ -566,7 +566,7 @@ th {
 .Input input:focus ~ label {
   opacity: 1;
 }
-.Input input[type='text'] ~ label::before {
+.Input input[type='username'] ~ label::before {
   content: "\f007";
 }
 .Input input[type='email'] ~ label::before {
@@ -619,6 +619,22 @@ th {
   margin-bottom: 50px;
 }
 .SocialMediaSignUp img {
+  max-height: 100%;
+  max-width:100%;
+}
+.SignIn {
+  width: 100%;
+  opacity: .98;
+  position: relative;
+  background-size: cover;
+  min-height: 1000px;
+  background-image: url('../images/signup.jpg');
+}
+.SocialMediaSignIn {
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+.SocialMediaSignIn img {
   max-height: 100%;
   max-width:100%;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-var Navigation = React.createClass({
+var HeroNavigation = React.createClass({
     render: function() {
       return (
         <div id="navigation" className="Navigation">
@@ -16,4 +16,4 @@ var Navigation = React.createClass({
     }
 });
 
-export default Navigation;
+export default HeroNavigation;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from './Logo';
-import Navigation from './Navigation';
-import UserProfile from './UserProfile';
+import Navigation from './HeroNavigation';
+import UserDropdown from './UserDropdown';
 
 var Header = React.createClass({
     render: function() {
@@ -9,7 +9,7 @@ var Header = React.createClass({
         <header className="Header">
             <Logo />
             <Navigation />
-            <UserProfile />
+            <UserDropdown />
         </header>
       )
     }

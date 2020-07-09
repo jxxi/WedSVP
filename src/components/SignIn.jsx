@@ -1,5 +1,5 @@
 import React from 'react';
-import '../static/css/App.css';
+import '../../static/css/App.css';
 
 var SignIn = React.createClass({
 	render: function() {

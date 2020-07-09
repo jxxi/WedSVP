@@ -1,7 +1,8 @@
 import React from 'react';
 import Logo from './Logo';
-import '../static/css/App.css';
+import '../../static/css/App.css';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { Link } from 'react-router-dom';
 
 var Input = React.createClass({
 	    getInitialState() {
@@ -78,10 +79,10 @@ var SocialMediaSignUp = React.createClass({
     return (
 		<div className="SocialMediaSignUp container">
 			<div className="row">
-				<a href="#"><img className="img-responsive" src={require('../static/images/facebook_signup.png')} alt="Sign Up with Facebook" /></a>
+				<a href="#"><img className="img-responsive" src={require('../../static/images/facebook_signup.png')} alt="Sign Up with Facebook" /></a>
 			</div>
 			<div className="row">	
-				<a href="#"><img className="img-responsive" src={require('../static/images/google_signup.png')} alt="Sign Up with Google" /></a>
+				<a href="#"><img className="img-responsive" src={require('../../static/images/google_signup.png')} alt="Sign Up with Google" /></a>
 			</div>
 		</div>
     );

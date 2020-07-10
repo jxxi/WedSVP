@@ -180,9 +180,33 @@ th {
   text-decoration: none;
   color: #ffffff;
 }
-
 .UserDropdown {
   margin-left: auto;
+}
+.UserDropdown a {
+  color: whitesmoke;
+  text-decoration: none !important;
+}
+.UserDropdown .dropdown-menu a {
+  color:#3f4859;
+}
+.UserDropdown .dropdown-item .active{
+  text-decoration: none;
+  background-color:  whitesmoke !important;
+}
+.UserDropdown .dropdown-menu .dropdown-item a :active{
+  text-decoration: none;
+  background-color:  whitesmoke !important;
+}
+.UserDropdown .dropdown {
+  margin-left: auto;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.UserDropdown .dropdown :hover {
+  margin-left: auto;
+  background-color: none;
 }
 .UserDropdown .User {
   display: -webkit-box;
@@ -219,10 +243,10 @@ th {
   height: 44px;
 }
 .UserDropdown .User:hover {
-  cursor: pointer;
+  cursor: pointer !important;
 }
 .UserDropdown .User:hover .image {
-  border: 3px solid #7CD6CE;
+  border: 3px solid #7CD6CE !important;
 }
 .UserDropdown .menu {
   display: none;
@@ -637,4 +661,9 @@ th {
 .SocialMediaSignIn img {
   max-height: 100%;
   max-width:100%;
+}
+.divider-before {
+  border-top: 3px solid #bbb;
+  margin-top: 4px;
+  padding-top: 8px;
 }

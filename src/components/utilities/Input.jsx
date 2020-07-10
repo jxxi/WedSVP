@@ -1,20 +1,20 @@
 import React from 'react';
 
-var Input = React.createClass({
-
-	getInitialState() {
-        return {
+class Input extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {
             valid: false,
             value: null,
             errorMessage: this.props.errorMessage,
             errorVisible: false
         }
-    },
-    handleChange(event) {
+    }
+    handleChange = (event) => {
         this.setState({
             value: event.target.value
         })
-
+        
         if (this.props.validate) {
             this.validate(event.target.value);
         }
@@ -22,8 +22,7 @@ var Input = React.createClass({
         if (this.props.onChange) {
             this.props.onChange(event.target.value);
         }
-
-    },
+    }
     validate(value) {
         if (this.props.validate && this.props.validate(value)) {
             this.setState({
@@ -36,9 +35,9 @@ var Input = React.createClass({
                 errorVisible: true
             });
         }
-    },
+    }
 	
-	render: function() {
+	render() {
 		return (
 			<div className="row">
 				<div className="Input">
@@ -56,9 +55,9 @@ var Input = React.createClass({
 			
 		);
 	}
-});
+};
 
-var InputError = React.createClass({
+class InputError extends React.Component{
     render() {
         var divStyle = {
             display: this.props.visible ? 'inline-block': 'none'
@@ -69,6 +68,6 @@ var InputError = React.createClass({
 			</div>
         )
     }
-});
+};
 
 export default Input;

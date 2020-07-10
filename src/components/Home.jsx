@@ -3,8 +3,8 @@ import Header from './Header';
 import Hero from './Hero';
 import TitleList from './TitleList';
 
-var Home = React.createClass({
-    render: function() {
+class Home extends React.Component{
+    render() {
       return (
         <div>
           <Header />
@@ -14,6 +14,6 @@ var Home = React.createClass({
         </div>
       )
     }
-});
+};
 
 export default Home;

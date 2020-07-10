@@ -3,8 +3,8 @@ import Logo from './Logo';
 import Navigation from './HeroNavigation';
 import UserDropdown from './UserDropdown';
 
-var Header = React.createClass({
-    render: function() {
+class Header extends React.Component{
+    render() {
       return (
         <header className="Header">
             <Logo />
@@ -13,6 +13,6 @@ var Header = React.createClass({
         </header>
       )
     }
-});
+};
 
 export default Header;

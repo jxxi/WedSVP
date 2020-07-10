@@ -6,8 +6,8 @@ import '../../../static/css/App.css';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
-var SocialMediaSignIn = React.createClass({
-  render: function() {
+class SocialMediaSignIn extends React.Component {
+  render() {
     return (
 		<div className="SocialMediaSignIn container">
 			<div className="row">
@@ -19,14 +19,15 @@ var SocialMediaSignIn = React.createClass({
 		</div>
     );
   }
-});
+};
 
-var Modal = React.createClass({
-	getInitialState() {
-        return {
+class Modal extends React.Component {
+	constructor(props){
+		super(props)
+		this.state = {
             password: null
         }
-    },
+	}
     handlePasswordInput(value) {
 		this.setState({
 			password: value
@@ -37,7 +38,7 @@ var Modal = React.createClass({
 				self.refs.confirmPassword.validate(self.state.confirmPassword);
 			}
 		});
-	},
+	}
 	isValidUsername(value) {
 		var nameRegex = /^[a-zA-Z\-]+$/;
 		var validUsername = value.match(nameRegex);
@@ -45,8 +46,8 @@ var Modal = React.createClass({
 			return false;
 		}
 		return true;
-	},
-	render: function() {
+	}
+	render() {
 		return (
 			<div className="Modal">		
 				<form 
@@ -75,19 +76,19 @@ var Modal = React.createClass({
 			</div>
 		);
 	}
-});
+};
 
-var SignIn = React.createClass({
+class SignIn extends React.Component {
+	constructor(props){
+		super(props)
+		this.state = { mounted: false };
+	}
 	
-	getInitialState: function() {
-		return { mounted: false };
-	},
-	
-	componentDidMount: function() {
+	componentDidMount () {
 		this.setState({ mounted: true });
-	},
+	}
 
-	render: function() {
+	render() {
 		var child;
 
 		if(this.state.mounted) {
@@ -105,6 +106,6 @@ var SignIn = React.createClass({
 			</div>
 		);
 	}
-});
+};
 
 export default SignIn;

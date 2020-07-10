@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-var ModalButton = React.createClass({
-  render: function() {
+class ModalButton extends React.Component{
+  render() {
     var button;
     
     if(this.props.page !== "")
@@ -14,6 +14,6 @@ var ModalButton = React.createClass({
       button
     );
   }
-});
+};
 
 export default ModalButton;

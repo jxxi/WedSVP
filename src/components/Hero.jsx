@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-var Hero = React.createClass({
-    render: function() {
+class Hero extends React.Component{
+    render() {
       return (
         <div id="hero" className="Hero" style={{backgroundImage: 'url(https://images4.alphacoders.com/700/700105.jpg)'}}>
           <div className="content">
@@ -17,10 +17,10 @@ var Hero = React.createClass({
         </div>
       );
     }
-})
+}
   
-var HeroButton = React.createClass({
-  render: function() {
+class HeroButton extends React.Component{
+  render() {
     var button;
     
     if(this.props.page !== "")
@@ -32,6 +32,6 @@ var HeroButton = React.createClass({
       button
     );
   }
-})
+}
 
 export default Hero;

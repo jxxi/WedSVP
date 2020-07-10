@@ -7,22 +7,22 @@ import { Switch, Route } from 'react-router-dom';
 import UserProfile from './components/UserProfile';
 
 
-var App = React.createClass({
-  apiKey: '87dfa1c669eea853da609d4968d294be',
-  getInitialState: function() {
-    return {searchTerm:"", searchUrl:""};
-  },
+class App extends React.Component{
+  apiKey = '87dfa1c669eea853da609d4968d294be'
+  constructor(props) {
+    super(props);
+    this.state = {searchTerm:"", searchUrl:""};
+  }
   
-  render: function() {
+  render() {
     return (
       <div id="main">
         <Main />     
       </div>
     );
   }
-});
+};
 
-//Main
 const Main = () => (
   <main>
     <Switch>

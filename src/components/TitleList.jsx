@@ -1,7 +1,7 @@
 import React from 'react';
 
-var Item = React.createClass({
-  render: function() {
+class Item extends React.Component{
+  render() {
     return (
       <div className="Item">
         <div className="overlay">
@@ -13,21 +13,23 @@ var Item = React.createClass({
       </div>
     );
   }
-});
+};
 
-var ListToggle = React.createClass({
-  getInitialState: function() {
-    return({ toggled: false })
-  },
-  handleClick: function() {
+class ListToggle extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = { toggled: false };
+  }
+
+  handleClick() {
     if(this.state.toggled === true) {
       this.setState({ toggled: false });
     } else {
       this.setState({ toggled: true }); 
     }
     
-  },
-  render: function() {
+  }
+  render() {
     return (
       <div onClick={this.handleClick} data-toggled={this.state.toggled} className="ListToggle">
         <div>
@@ -37,10 +39,10 @@ var ListToggle = React.createClass({
       </div>
     );
   }
-});
+};
 
-var TitleList = React.createClass({
-  render: function() {
+class TitleList extends React.Component{
+  render() {
     return (
       <div ref="titlecategory" className="TitleList" data-loaded='true'>
         <div className="Title">
@@ -54,7 +56,7 @@ var TitleList = React.createClass({
       </div>
     );
   }
-});
+};
 
 /*
 var TitleList = React.createClass({

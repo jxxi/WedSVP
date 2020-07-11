@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class Hero extends React.Component{
     render() {
       return (
-        <div id="hero" className="Hero" style={{backgroundImage: 'url(https://images4.alphacoders.com/700/700105.jpg)'}}>
+        <div id="hero" className="Hero">
           <div className="content">
             <h2>Create a Personalized RSVP for your Special Day</h2>
             <h3>Skip the headache of snail mail. Direct your guests to an online RSVP.</h3>

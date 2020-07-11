@@ -2,6 +2,7 @@ import React from 'react';
 import SignUp from './components/login/SignUp';
 import SignIn from './components/login/SignIn';
 import Home from './components/Home';
+import Header from './components/Header';
 import '../static/css/App.css';
 import { Switch, Route } from 'react-router-dom';
 import UserProfile from './components/UserProfile';
@@ -17,7 +18,8 @@ class App extends React.Component{
   render() {
     return (
       <div id="main">
-        <Main />     
+        <Main />
+        <Header />   
       </div>
     );
   }

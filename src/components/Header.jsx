@@ -1,18 +1,17 @@
 import React from 'react';
 import Logo from './Logo';
-import Navigation from './HeroNavigation';
-import UserDropdown from './UserDropdown';
+import Navigation from './Navigation';
+
 
 class Header extends React.Component{
-    render() {
-      return (
-        <header className="Header">
-            <Logo />
-            <Navigation />
-            <UserDropdown />
-        </header>
-      )
-    }
+  render() {
+    return (
+      <header className="Header">
+          <Logo />
+          <Navigation />
+      </header>
+    )
+  }
 };
 
 export default Header;
